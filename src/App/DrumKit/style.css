@@ -20,15 +20,13 @@ body {
 .drum-key h3 {
   font-family: "Protest Revolution", sans-serif;
   font-weight: 400;
-  font-style: normal;
   font-size: 48px;
   margin: 0 0 10px 0;
+  text-transform: uppercase;
 }
 
 .drum-key p {
   font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
   margin: 0;
   text-transform: uppercase;
   color: #f7b263;
