@@ -1,13 +1,10 @@
 import "./style.css";
 
-export function DrumKey({ keyName, keySound, keySrc, audioID }) {
+export function DrumKey({ keyName, keySound, className }) {
   return (
-    <div className="drum-key">
+    <div className={className}>
       <h3>{keyName}</h3>
       <p>{keySound}</p>
-      <audio id={audioID}>
-        <source src={keySrc} />
-      </audio>
     </div>
   );
 }

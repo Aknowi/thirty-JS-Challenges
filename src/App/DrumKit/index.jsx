@@ -1,84 +1,84 @@
 import "./style.css";
 import { DrumKey } from "./DrumKey";
-import { useEffect, useState } from "react";
+import Clap from "./ImagesFontsAudio/clap.wav";
+import Hihat from "./ImagesFontsAudio/hihat.wav";
+import Kick from "./ImagesFontsAudio/kick.wav";
+import Openhat from "./ImagesFontsAudio/openhat.wav";
+import Boom from "./ImagesFontsAudio/boom.wav";
+import Ride from "./ImagesFontsAudio/ride.wav";
+import Snare from "./ImagesFontsAudio/snare.wav";
+import Tom from "./ImagesFontsAudio/tom.wav";
+import Tink from "./ImagesFontsAudio/tink.wav";
+import { useState } from "react";
 
-const drumElements = [
+const drums = [
   {
     name: "a",
     soundName: "clap",
-    keyCode: "65",
-    audioSrc: "./ImagesFontsAudio/clap.wav",
+    audio: new Audio(Clap),
   },
   {
     name: "s",
     soundName: "hihat",
-    keyCode: "83",
-    audioSrc: "./ImagesFontsAudio/hihat.wav",
+    audio: new Audio(Hihat),
   },
   {
     name: "d",
     soundName: "kick",
-    keyCode: "68",
-    audioSrc: "./ImagesFontsAudio/kick.wav",
+    audio: new Audio(Kick),
   },
   {
     name: "f",
     soundName: "openhat",
-    keyCode: "70",
-    audioSrc: "./ImagesFontsAudio/openhat.wav",
+    audio: new Audio(Openhat),
   },
   {
     name: "g",
     soundName: "boom",
-    keyCode: "71",
-    audioSrc: "./ImagesFontsAudio/boom.wav",
+    audio: new Audio(Boom),
   },
   {
     name: "h",
     soundName: "ride",
-    keyCode: "72",
-    audioSrc: "./ImagesFontsAudio/ride.wav",
+    audio: new Audio(Ride),
   },
   {
     name: "j",
     soundName: "snare",
-    keyCode: "74",
-    audioSrc: "./ImagesFontsAudio/snare.wav",
+    audio: new Audio(Snare),
   },
   {
     name: "k",
     soundName: "tom",
-    keyCode: "75",
-    audioSrc: "./ImagesFontsAudio/tom.wav",
+    audio: new Audio(Tom),
   },
   {
     name: "l",
     soundName: "tink",
-    keyCode: "76",
-    audioSrc: "./ImagesFontsAudio/tink.wav",
+    audio: new Audio(Tink),
   },
 ];
 
 export function DrumKit() {
+  const [eventKey, setEventKey] = useState("");
+
   const handleOnKey = (event) => {
-    const key = event.key;
-    const matchedElement = drumElements.find((element) => element.name === key);
-    if (matchedElement) {
-      let audio = new Audio(matchedElement.audioSrc);
-      audio.play();
+    const matchedDrum = drums.find((drum) => drum.name === event.key);
+    if (matchedDrum) {
+      setEventKey(event.key);
+      matchedDrum.audio.play();
     }
   };
 
   return (
-    <div tabIndex="0" onKeyDown={handleOnKey}>
-      {drumElements.map((element, index) => {
+    <div onKeyDown={handleOnKey} tabIndex="0" className="drum-kit-box">
+      {drums.map((drum, index) => {
         return (
           <DrumKey
-            keyName={element.name}
-            keySound={element.soundName}
             key={index}
-            keySrc={element.audioSrc}
-            audioID={index}
+            keyName={drum.name}
+            keySound={drum.soundName}
+            className={`drum-key ${drum.name === eventKey ? "active" : ""}`}
           />
         );
       })}
