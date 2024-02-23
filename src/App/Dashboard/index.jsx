@@ -8,7 +8,7 @@ export function Dashboard() {
   return (
     <div className="dashboard-box">
       <div className="challenges-box">
-        <NavLink to="/drum-kit">Challange 1: Drum Kit</NavLink>
+        <NavLink to="drum-kit/">Challange 1: Drum Kit</NavLink>
       </div>
     </div>
   );
