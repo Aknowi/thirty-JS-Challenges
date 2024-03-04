@@ -71,7 +71,7 @@ export function DrumKit() {
   };
 
   return (
-    <div onKeyDown={handleOnKey} tabIndex="0" className="drum-kit-box">
+    <div onKeyDown={handleOnKey} tabIndex="0" className="drum-kit-page">
       {drums.map((drum, index) => {
         return (
           <DrumKey

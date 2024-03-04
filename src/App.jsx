@@ -3,6 +3,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { NotFound } from "./App/NotFound";
 import { DrumKit } from "./App/DrumKit";
 import { Dashboard } from "./App/Dashboard";
+import { Clock } from "./App/Clock";
 function App() {
   return (
     <BrowserRouter>
@@ -13,6 +14,7 @@ function App() {
           element={<Dashboard />}
         />
         <Route path="thirty-JS-Challenges/drum-kit/*" element={<DrumKit />} />
+        <Route path="thirty-JS-Challenges/clock/*" element={<Clock />} />
         <Route path="thirty-JS-Challenges/*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
