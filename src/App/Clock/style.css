@@ -38,6 +38,21 @@
   position: absolute;
   top: 50%;
   transform-origin: 100%;
-  transform: rotate(90deg);
+}
+
+.hour {
+  width: 30%;
+  margin-left: 20%;
+  transition: all 1s ease;
+}
+
+.minute {
+  width: 38%;
+  margin-left: 12%;
+  transition: all 0.5s ease;
+}
+
+.second {
   transition: all 0.05s cubic-bezier(0, 2.37, 0, -0.25);
+  background: rgb(238, 223, 90);
 }
