@@ -4,11 +4,6 @@ import { useState } from "react";
 import "./style.css";
 import { useEffect } from "react";
 
-// - zmienić z rem na px
-// - dodać RWD
-// - dodać z-index
-// - dodać border color
-
 export function Clock() {
   const [secondDegree, setSecondDegree] = useState(90);
   const [minuteDegree, setMinuteDegree] = useState(90);
@@ -24,7 +19,7 @@ export function Clock() {
       setSecondDegree(nowSecond * 6 + 90);
       setMinuteDegree(nowMinute * 6 + nowSecond * 0.1 + 90);
       setHourDegree(nowHour * 30 + nowMinute * (0.1 / 12) + 90);
-    }, 1000);
+    }, 500);
     return () => clearInterval(intervalID);
   }, []);
 
@@ -40,7 +35,9 @@ export function Clock() {
           style={{ transform: `rotate(${minuteDegree}deg)` }}
         ></div>
         <div
-          className="clock-hand second"
+          className={`clock-hand second ${
+            secondDegree !== 90 ? "transition-s" : ""
+          }`}
           style={{ transform: `rotate(${secondDegree}deg)` }}
         ></div>
       </div>
