@@ -12,6 +12,9 @@ export function Dashboard() {
         <NavLink to="clock/" className="challenges-link">
           Challenge 2: Clock
         </NavLink>
+        <NavLink to="css-variables-and-js/" className="challenges-link">
+          Challenge 3: Playing with CSS Variables and JS &#40;In progress&#41;
+        </NavLink>
       </div>
     </div>
   );
