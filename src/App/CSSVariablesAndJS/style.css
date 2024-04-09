@@ -1,6 +1,20 @@
 .variables-page * {
   text-align: center;
-  margin: 30px 0;
+  margin: 0 0 40px 0;
+}
+
+h1 {
+  padding-top: 40px;
+}
+
+.colored-text {
+  color: var(--base-color);
+}
+
+.variables-page {
+  background-color: #e6e6e6;
+  width: 100vw;
+  height: 100vw;
 }
 
 .input-box {
@@ -13,4 +27,7 @@
 .bird-img {
   display: block;
   margin: 0 auto;
+  padding: var(--spacing);
+  background-color: var(--base-color);
+  filter: blur(var(--blur));
 }
