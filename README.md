@@ -1,6 +1,6 @@
 # thirty-JS-Challenges
 
-An application inspired by the challange JavaScript30 by Wes Bos - in progress, written using react. 
+An application inspired by the challenge JavaScript30 by Wes Bos - in progress, written using react. 
 
 ## How to run locally
 
